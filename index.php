@@ -23,12 +23,14 @@
         echo $view->render('views/form1.html');
     });
     $f3->route('POST /order2', function() {
+        $_SESSION['animal'] = $_POST['animal'];
         $view = new View;
         echo $view->render('views/form2.html');
     });
     $f3->route('POST /results', function() {
 
-        echo '<h1>Results</h1>';
+        echo '<h1>Results page</h1>';
+        echo '<p>Thank you for ordering a(n) ' . $_POST['color'] . " " . $_SESSION['animal'] . "!</p>";
     });
 
     $f3->run();
