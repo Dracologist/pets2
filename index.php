@@ -26,9 +26,9 @@
 
         echo '<h1>Form 2</h1>';
     });
-    $f3->route('GET /order2', function() {
+    $f3->route('GET /results', function() {
 
-        echo '<h1>Form 2</h1>';
+        echo '<h1>Results</h1>';
     });
 
     $f3->run();
