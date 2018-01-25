@@ -2,6 +2,7 @@
     session_start();
     require_once('vendor/autoload.php');
     $f3 = Base::instance();
+    $f3->set('colors', array('pink', 'green', 'blue'));
 
     $f3->route('GET /', function() {
         $view = new View;
