@@ -7,12 +7,15 @@
 <body>
     <form action="form.html" method="post">
         <label>Pet Name <input type="text" name="name"></label>
-        <label> Pet Color <select>
+        <label> Pet Color <select name="color">
             <option>--Select--</option>
             <repeat group="{{ @colors }}" value="{{ @colorOption }}">
                 <option>{{ @colorOption }}</option>
             </repeat>
         </select></label>
+        <label> Pet Type <input type="text" name="type"></label>
+        <br>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
