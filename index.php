@@ -35,7 +35,7 @@
         echo '<p>Thank you for ordering a(n) ' . $f3->get('color') . " " . $f3->get('animal') . "!</p>";
     });
     $f3->route('GET|POST /new-pet', function($f3) {
-        echo '<h1>New Pet</h1>';
+        echo $view->render('views/form.html');
     });
 
     $f3->run();
