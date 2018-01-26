@@ -35,8 +35,9 @@
         echo '<p>Thank you for ordering a(n) ' . $f3->get('color') . " " . $f3->get('animal') . "!</p>";
     });
     $f3->route('GET|POST /new-pet', function($f3) {
-        $view = new View;
-        echo $view->render('views/form.html');
+        $template = new Template;
+        $f3->set('test', 'test');
+        echo $template->render('views/form.html');
     });
 
     $f3->run();
