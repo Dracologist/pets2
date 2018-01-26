@@ -5,17 +5,22 @@
     <title>New Pet</title>
 </head>
 <body>
-    <form action="form.html" method="post">
-        <label>Pet Name <input type="text" name="name"></label>
-        <label> Pet Color <select name="color">
+    <check if="{{@success}}">
+        <h2>Thank you for your order of a {{@type}}!</h2>
+    </check>
+    <form action="" method="post">
+        <label>Pet Name <check if="{{isset(@errors['name'])}}"><p>{{@errors['name']}}</p></check><input type="text" name="name"></label>
+        <label> Pet Color
+            <check if="{{isset(@errors['color'])}}"><p>{{@errors['color']}}</p></check>
+            <select name="color">
             <option>--Select--</option>
             <repeat group="{{ @colors }}" value="{{ @colorOption }}">
                 <option>{{ @colorOption }}</option>
             </repeat>
         </select></label>
-        <label> Pet Type <input type="text" name="type"></label>
+        <label> Pet Type <check if="{{isset(@errors['type'])}}"><p>{{@errors['type']}}</p></check> <input type="text" name="type"></label>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit">
     </form>
 </body>
 </html>
