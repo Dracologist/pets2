@@ -12,3 +12,15 @@ function validColor($color) {
 function validString($string){
     return isset($string) && ctype_alpha($string);
 }
+
+$errors = array();
+
+if (!validColor($color)) {
+    $errors['color'] = "Please enter a valid color.";
+}
+
+if (validString($string)) {
+    $errors['string'] = "Please enter a valid string.";
+}
+
+$success = sizeof($errors) == 0;
