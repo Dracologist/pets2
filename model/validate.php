@@ -26,5 +26,5 @@ if (!validString($name)) {
 if (!validString($type)) {
     $errors['type'] = "Please enter a valid string.";
 }
-
+$f3->set('errors', $errors);
 $success = sizeof($errors) == 0;
