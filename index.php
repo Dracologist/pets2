@@ -42,16 +42,10 @@
             $color = $_POST['color'];
             $type = $_POST['type'];
             $success = false;
+            $f3->set('color', $color);
+            $f3->set('name', $name);
+            $f3->set('type', $type);
             include ('model/validate.php');
-            if(validColor($color)){
-                $f3->set('color', $color);
-            }
-            if(validString($name)){
-                $f3->set('name', $name);
-            }
-            if(validString($type)){
-                $f3->set('type', $type);
-            }
             $f3->set('success', $success);
         }
         echo $template->render('views/form.html');
