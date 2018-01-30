@@ -24,8 +24,7 @@
                     <select name="color">
                     <option>--Select--</option>
                     <repeat group="{{ @colors }}" value="{{ @colorOption }}">
-                        <option>
-                            <check if="{{ @colorOption == @color }}">selected</check>
+                        <option <check if="{{ @colorOption == @color }}">selected</check>>
                             {{ @colorOption }}
                         </option>
                     </repeat>
