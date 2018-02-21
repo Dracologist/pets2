@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php if ($success): ?>
-        <h2>Thank you for your order of a <?= ($type) ?>!</h2>
+        <h2>Thank you for your order of a <?= ($color) ?> <?= ($type) ?>!</h2>
     <?php endif; ?>
     <div class="container">
     <form action="" method="post">
@@ -24,8 +24,7 @@
                     <select name="color">
                     <option>--Select--</option>
                     <?php foreach (($colors?:[]) as $colorOption): ?>
-                        <option>
-                            <?php if ($colorOption == $color): ?>selected<?php endif; ?>
+                        <option <?php if ($colorOption == $color): ?>selected<?php endif; ?>>
                             <?= ($colorOption)."
 " ?>
                         </option>
